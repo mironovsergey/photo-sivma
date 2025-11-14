@@ -1,0 +1,38 @@
+{
+  "name": "photo-sivma",
+  "version": "1.0.0",
+  "type": "module",
+  "packageManager": "npm@11.6.2",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:ngrok": "node scripts/ngrok.mjs",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "prisma:generate": "turbo run prisma:generate",
+    "prisma:migrate": "turbo run prisma:migrate",
+    "prisma:studio": "turbo run prisma:studio",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "docker:reset": "docker-compose down -v && docker-compose up -d",
+    "docker:prod:build": "docker-compose build",
+    "docker:prod:up": "docker-compose --profile production up -d",
+    "docker:prod:down": "docker-compose --profile production down",
+    "docker:prod:logs": "docker-compose --profile production logs -f"
+  },
+  "engines": {
+    "node": ">=22.21.1",
+    "npm": ">=10.9.4"
+  },
+  "devDependencies": {
+    "@ngrok/ngrok": "^1.5.2",
+    "dotenv": "^17.2.3",
+    "dotenv-cli": "^11.0.0",
+    "prettier": "^3.6.2",
+    "turbo": "^2.6.1"
+  }
+}
