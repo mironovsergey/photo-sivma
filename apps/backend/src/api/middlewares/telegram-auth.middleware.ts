@@ -1,6 +1,6 @@
 import type { Response, NextFunction } from 'express';
-import { AppError, TelegramRequest } from '../../types/index.js';
-import { validateTelegramWebAppData, parseTelegramWebAppData } from '../../utils/telegram.js';
+import { AppError, TelegramRequest } from '../../types/index';
+import { validateTelegramWebAppData, parseTelegramWebAppData } from '../../utils/telegram';
 
 export function telegramAuthMiddleware(
   req: TelegramRequest,

@@ -1,9 +1,9 @@
 import { Router } from 'express';
 import multer from 'multer';
-import uploadController from '../controllers/upload.controller.js';
-import { telegramAuthMiddleware } from '../middlewares/telegram-auth.middleware.js';
-import { CONSTANTS } from '../../config/constants.js';
-import { env } from '../../config/env.js';
+import uploadController from '../controllers/upload.controller';
+import { telegramAuthMiddleware } from '../middlewares/telegram-auth.middleware';
+import { CONSTANTS } from '../../config/constants';
+import { env } from '../../config/env';
 
 const router = Router();
 

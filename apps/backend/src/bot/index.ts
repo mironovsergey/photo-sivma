@@ -1,5 +1,5 @@
-import { bot } from '../config/bot.js';
-import { registerBotHandlers } from './handlers.js';
+import { bot } from '../config/bot';
+import { registerBotHandlers } from './handlers';
 
 export async function initializeBot() {
   try {

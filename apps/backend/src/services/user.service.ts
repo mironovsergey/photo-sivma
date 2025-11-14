@@ -1,5 +1,5 @@
 import type { User } from '@prisma/client';
-import prisma from '../config/database.js';
+import prisma from '../config/database';
 
 export class UserService {
   async findOrCreate(data: {

@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
-import { minioClient } from '../config/storage.js';
-import { env } from '../config/env.js';
+import { minioClient } from '../config/storage';
+import { env } from '../config/env';
 
 export class StorageService {
   async uploadFile(orderId: string, file: Express.Multer.File): Promise<string> {

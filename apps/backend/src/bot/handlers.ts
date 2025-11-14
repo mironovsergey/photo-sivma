@@ -1,6 +1,6 @@
 import { Bot, Context } from 'grammy';
-import { env } from '../config/env.js';
-import userService from '../services/user.service.js';
+import { env } from '../config/env';
+import userService from '../services/user.service';
 
 export function registerBotHandlers(bot: Bot) {
   bot.command('start', async (ctx: Context) => {

@@ -1,5 +1,5 @@
 import type { Request, Response, NextFunction } from 'express';
-import { AppError } from '../../types/index.js';
+import { AppError } from '../../types/index';
 
 export function errorHandler(
   err: Error | AppError,

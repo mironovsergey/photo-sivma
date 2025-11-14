@@ -1,6 +1,6 @@
 import type { Order, Photo } from '@prisma/client';
-import { env } from '../config/env.js';
-import { bot } from '../config/bot.js';
+import { env } from '../config/env';
+import { bot } from '../config/bot';
 
 export class TelegramService {
   async notifyNewOrder(

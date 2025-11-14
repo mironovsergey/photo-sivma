@@ -1,12 +1,12 @@
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
-import { env } from './config/env.js';
-import { initializeStorage } from './config/storage.js';
-import { initializeBot } from './bot/index.js';
-import { errorHandler } from './api/middlewares/error-handler.middleware.js';
-import { loggerMiddleware } from './api/middlewares/logger.middleware.js';
-import routes from './api/routes/index.js';
+import { env } from './config/env';
+import { initializeStorage } from './config/storage';
+import { initializeBot } from './bot/index';
+import { errorHandler } from './api/middlewares/error-handler.middleware';
+import { loggerMiddleware } from './api/middlewares/logger.middleware';
+import routes from './api/routes/index';
 
 async function bootstrap() {
   const app = express();

@@ -1,5 +1,5 @@
 import { createHmac } from 'crypto';
-import { env } from '../config/env.js';
+import { env } from '../config/env';
 
 export function validateTelegramWebAppData(initData: string): boolean {
   const urlParams = new URLSearchParams(initData);

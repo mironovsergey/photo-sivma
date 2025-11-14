@@ -1,8 +1,8 @@
 import type { Response, NextFunction } from 'express';
 import { AppError, type TelegramRequest } from '../../types';
-import userService from '../../services/user.service.js';
-import orderService from '../../services/order.service.js';
-import telegramService from '../../services/telegram.service.js';
+import userService from '../../services/user.service';
+import orderService from '../../services/order.service';
+import telegramService from '../../services/telegram.service';
 
 export class UploadController {
   async uploadPhotos(req: TelegramRequest, res: Response, next: NextFunction): Promise<void> {

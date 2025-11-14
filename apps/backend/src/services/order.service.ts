@@ -1,9 +1,9 @@
 import type { Order, Photo } from '@prisma/client';
 import { AppError } from '../types';
-import { CONSTANTS } from '../config/constants.js';
-import { env } from '../config/env.js';
-import prisma from '../config/database.js';
-import storageService from './storage.service.js';
+import { CONSTANTS } from '../config/constants';
+import { env } from '../config/env';
+import prisma from '../config/database';
+import storageService from './storage.service';
 
 export class OrderService {
   private async generateOrderNumber(): Promise<string> {

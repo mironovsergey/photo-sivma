@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import uploadRoutes from './upload.routes.js';
+import uploadRoutes from './upload.routes';
 
 const router = Router();
 
