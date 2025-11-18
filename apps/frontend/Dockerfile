@@ -6,8 +6,7 @@ FROM node:22-alpine AS deps
 WORKDIR /app
 
 # Копирование конфигурационных файлов
-COPY package*.json ./
-COPY turbo.json ./
+COPY package*.json turbo.json ./
 COPY apps/frontend/package*.json ./apps/frontend/
 
 # Установка зависимостей
@@ -20,12 +19,11 @@ FROM node:22-alpine AS builder
 
 WORKDIR /app
 
-# Копирование node_modules
+# Копирование node_modules из deps stage
 COPY --from=deps /app/node_modules ./node_modules
 
 # Копирование конфигурационных файлов
-COPY package*.json ./
-COPY turbo.json ./
+COPY package*.json turbo.json ./
 
 # Копирование исходного кода фронтенда
 COPY apps/frontend ./apps/frontend

@@ -73,6 +73,25 @@ services:
     networks:
       - photo-sivma-network
 
+  backend-migrate:
+    build:
+      context: .
+      dockerfile: apps/backend/Dockerfile
+    container_name: photo-sivma-backend-migrate
+    profiles: ["production"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+    networks:
+      - photo-sivma-network
+    command: npx prisma migrate deploy
+
   backend:
     build:
       context: .
@@ -81,12 +100,8 @@ services:
     restart: unless-stopped
     profiles: ["production"]
     depends_on:
-      postgres:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-      minio:
-        condition: service_healthy
+      backend-migrate:
+        condition: service_completed_successfully
     environment:
       NODE_ENV: ${NODE_ENV}
       BACKEND_PORT: ${BACKEND_PORT}
@@ -107,7 +122,6 @@ services:
       - "${BACKEND_PORT}:3001"
     networks:
       - photo-sivma-network
-    command: sh -c "npx prisma migrate deploy && node dist/index.js"
 
   frontend:
     build:

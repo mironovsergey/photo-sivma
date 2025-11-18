@@ -18,6 +18,10 @@
     "skipLibCheck": true,
     "types": ["node"]
   },
+  "tsc-alias": {
+    "resolveFullPaths": true,
+    "verbose": false
+  },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
